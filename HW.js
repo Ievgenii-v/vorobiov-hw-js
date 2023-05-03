@@ -249,21 +249,34 @@ removeVowels('someone and everyone');
     кілометра
 
 
+*/
 
 function metersToKilometers(m) {
 	const km = m / 1000;
-	if (m > 1000) {
+	if (km % 1 == 0 && m >= 5000) {
 		console.log(`${m} метрів це буде ${km} кілометрів`);
-	} else if (m == 1000) {
+	} else if (m === 1000) {
 		console.log(`${m} метрів це буде ${km} кілометр`);
-	} else if (km % m === 0) {
+	} else if (km % 1 == 0 && m <= 5000) {
+		console.log(`${m} метрів це буде ${km} кілометри`);
+	} else if (km % 1 !== 0) {
 		console.log(`${m} метрів це буде ${km} кілометра`);
 	} else {
-		console.log(`ddd`);
+		console.log(
+			`щось пішло не так (-_-) ці ${m} метри не пішли в ${km} кілометри`
+		);
 	}
 }
+
+metersToKilometers(100);
 metersToKilometers(1000);
-metersToKilometers(1024);
 metersToKilometers(1500);
-metersToKilometers(22000);
-*/
+metersToKilometers(2000);
+metersToKilometers(2300);
+metersToKilometers(3000);
+metersToKilometers(3897);
+metersToKilometers(4000);
+metersToKilometers(5000);
+metersToKilometers(5700);
+metersToKilometers(11000);
+metersToKilometers(123456789.1236587);
