@@ -257,7 +257,7 @@ function metersToKilometers(m) {
 		console.log(`${m} метрів це буде ${km} кілометрів`);
 	} else if (m === 1000) {
 		console.log(`${m} метрів це буде ${km} кілометр`);
-	} else if (km % 1 == 0 && m <= 5000) {
+	} else if (km % 1 == 0 && m < 5000) {
 		console.log(`${m} метрів це буде ${km} кілометри`);
 	} else if (km % 1 !== 0) {
 		console.log(`${m} метрів це буде ${km} кілометра`);
