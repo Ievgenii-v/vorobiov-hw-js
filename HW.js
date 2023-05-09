@@ -83,29 +83,25 @@ whatIsTheSeason(4);
     Результат виводити в консоль.
 */
 function whichmetersberBetween(a, b, c) {
-	if (a < b && a > c) {
+	if ((a < b && a > c) || (a < c && a > b)) {
 		console.log(
 			`${a},${b},${c} => [a < b && a > c] The value ${a} is between ${c} and ${b}`
 		);
-	} else if (a < c && a > b) {
-		console.log(
-			`${a},${b},${c} => [a < c && a > b] The value ${a} is between ${b} and ${c}`
-		);
-	} else if (c < a && c > b) {
-		console.log(
-			`${a},${b},${c} => [c < a && c > b] The value ${c} is between ${b} and ${a}`
-		);
-	} else if (c < b && c > a) {
-		console.log(
-			`${a},${b},${c} => [c < b && c > a] The value ${c} is between ${a} and ${b}`
-		);
-	} else if (b < a && b > c) {
+	} else if ((b < a && b > c) || (b < c && b > a)) {
 		console.log(
 			`${a},${b},${c} => [b < a && b > c] The value ${b} is between ${c} and ${a}`
 		);
-	} else if (b < c && b > a) {
+	} else if ((c < a && c > b) || (c < b && c > a)) {
 		console.log(
-			`${a},${b},${c} => [b < c && b > a] The value ${b} is between ${a} and ${c}`
+			`${a},${b},${c} => [c < a && c > b] The value ${c} is between ${b} and ${a}`
+		);
+	} else if (c == b && b < a) {
+		console.log(
+			`${a},${b},${c} => [c == b && b < a] The value ${a} is greater than ${c}, ${b}`
+		);
+	} else if (c == a && a < b) {
+		console.log(
+			`${a},${b},${c} => [c == a && a < b] The value ${b} is greater than ${a}, ${c}`
 		);
 	} else if (a == b && b < c) {
 		console.log(
@@ -119,17 +115,9 @@ function whichmetersberBetween(a, b, c) {
 		console.log(
 			`${a},${b},${c} => [c == b && b > a] The values ${c} and ${b} are greater than ${a}`
 		);
-	} else if (c == b && b < a) {
-		console.log(
-			`${a},${b},${c} => [c == b && b < a] The value ${a} is greater than ${c}, ${b}`
-		);
 	} else if (c == a && a > b) {
 		console.log(
 			`${a},${b},${c} => [c == a && a > b] The values ${a} and ${c} are greater than ${b}`
-		);
-	} else if (c == a && a < b) {
-		console.log(
-			`${a},${b},${c} => [c == a && a < b] The value ${b} is greater than ${a}, ${c}`
 		);
 	} else {
 		console.log(
@@ -137,6 +125,61 @@ function whichmetersberBetween(a, b, c) {
 		);
 	}
 }
+// function whichmetersberBetween(a, b, c) {
+// 	if (a < b && a > c) {
+// 		console.log(
+// 			`${a},${b},${c} => [a < b && a > c] The value ${a} is between ${c} and ${b}`
+// 		);
+// 	} else if (a < c && a > b) {
+// 		console.log(
+// 			`${a},${b},${c} => [a < c && a > b] The value ${a} is between ${b} and ${c}`
+// 		);
+// 	} else if (c < a && c > b) {
+// 		console.log(
+// 			`${a},${b},${c} => [c < a && c > b] The value ${c} is between ${b} and ${a}`
+// 		);
+// 	} else if (c < b && c > a) {
+// 		console.log(
+// 			`${a},${b},${c} => [c < b && c > a] The value ${c} is between ${a} and ${b}`
+// 		);
+// 	} else if (b < a && b > c) {
+// 		console.log(
+// 			`${a},${b},${c} => [b < a && b > c] The value ${b} is between ${c} and ${a}`
+// 		);
+// 	} else if (b < c && b > a) {
+// 		console.log(
+// 			`${a},${b},${c} => [b < c && b > a] The value ${b} is between ${a} and ${c}`
+// 		);
+// 	} else if (a == b && b < c) {
+// 		console.log(
+// 			`${a},${b},${c} => [a == b && b < c] The value ${c} is greater than ${a}, ${b}`
+// 		);
+// 	} else if (a == b && b > c) {
+// 		console.log(
+// 			`${a},${b},${c} => [a == b && b > c] The values ${a} and ${b} are greater than ${c}`
+// 		);
+// 	} else if (c == b && b > a) {
+// 		console.log(
+// 			`${a},${b},${c} => [c == b && b > a] The values ${c} and ${b} are greater than ${a}`
+// 		);
+// 	} else if (c == b && b < a) {
+// 		console.log(
+// 			`${a},${b},${c} => [c == b && b < a] The value ${a} is greater than ${c}, ${b}`
+// 		);
+// 	} else if (c == a && a > b) {
+// 		console.log(
+// 			`${a},${b},${c} => [c == a && a > b] The values ${a} and ${c} are greater than ${b}`
+// 		);
+// 	} else if (c == a && a < b) {
+// 		console.log(
+// 			`${a},${b},${c} => [c == a && a < b] The value ${b} is greater than ${a}, ${c}`
+// 		);
+// 	} else {
+// 		console.log(
+// 			`${a},${b},${c} => [else] The values ${b}, ${c} and ${a} are same`
+// 		);
+// 	}
+// }
 whichmetersberBetween(1, 2, 3);
 whichmetersberBetween(3, 1, 2);
 whichmetersberBetween(2, 3, 1);
@@ -203,19 +246,19 @@ dayOfWeek(10);
     Результат виводити в консоль.
 */
 
-function mathOperation(meters1, meters2, symbol) {
+function mathOperation(n1, n2, symbol) {
 	switch (symbol) {
 		case '+':
-			console.log(`${meters1} + ${meters2} = ` + (meters1 + meters2));
+			console.log(`${n1} + ${n2} = ` + (n1 + n2));
 			break;
 		case '-':
-			console.log(`${meters1} - ${meters2} = ` + (meters1 - meters2));
+			console.log(`${n1} - ${n2} = ` + (n1 - n2));
 			break;
 		case '*':
-			console.log(`${meters1} * ${meters2} = ` + meters1 * meters2);
+			console.log(`${n1} * ${n2} = ` + n1 * n2);
 			break;
 		case '/':
-			console.log(`${meters1} / ${meters2} = ` + meters1 / meters2);
+			console.log(`${n1} / ${n2} = ` + n1 / n2);
 			break;
 		default:
 			console.log('We cannot handle this symbol');
@@ -253,14 +296,22 @@ removeVowels('someone and everyone');
 
 function metersToKilometers(m) {
 	const km = m / 1000;
+	let endingForMeter;
+	if (m === 1) {
+		endingForMeter = '';
+	} else if (m < 5) {
+		endingForMeter = 'а';
+	} else {
+		endingForMeter = 'ів';
+	}
 	if (km % 1 == 0 && m >= 5000) {
-		console.log(`${m} метрів це буде ${km} кілометрів`);
+		console.log(`${m} метр${endingForMeter} це буде ${km} кілометрів`);
 	} else if (m === 1000) {
-		console.log(`${m} метрів це буде ${km} кілометр`);
+		console.log(`${m} метр${endingForMeter} це буде ${km} кілометр`);
 	} else if (km % 1 == 0 && m < 5000) {
 		console.log(`${m} метрів це буде ${km} кілометри`);
 	} else if (km % 1 !== 0) {
-		console.log(`${m} метрів це буде ${km} кілометра`);
+		console.log(`${m} метр${endingForMeter} це буде ${km} кілометра`);
 	} else {
 		console.log(
 			`щось пішло не так (-_-) ці ${m} метри не пішли в ${km} кілометри`
@@ -268,6 +319,10 @@ function metersToKilometers(m) {
 	}
 }
 
+metersToKilometers(0);
+metersToKilometers(1);
+metersToKilometers(2);
+metersToKilometers(5);
 metersToKilometers(100);
 metersToKilometers(1000);
 metersToKilometers(1500);
