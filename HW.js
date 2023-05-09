@@ -82,7 +82,7 @@ whatIsTheSeason(4);
     Використати вкладені оператори if
     Результат виводити в консоль.
 */
-function whichmetersberBetween(a, b, c) {
+function whichValueBetween(a, b, c) {
 	if ((a < b && a > c) || (a < c && a > b)) {
 		console.log(
 			`${a},${b},${c} => [a < b && a > c] The value ${a} is between ${c} and ${b}`
@@ -125,7 +125,7 @@ function whichmetersberBetween(a, b, c) {
 		);
 	}
 }
-// function whichmetersberBetween(a, b, c) {
+// function whichValueBetween(a, b, c) {
 // 	if (a < b && a > c) {
 // 		console.log(
 // 			`${a},${b},${c} => [a < b && a > c] The value ${a} is between ${c} and ${b}`
@@ -180,23 +180,23 @@ function whichmetersberBetween(a, b, c) {
 // 		);
 // 	}
 // }
-whichmetersberBetween(1, 2, 3);
-whichmetersberBetween(3, 1, 2);
-whichmetersberBetween(2, 3, 1);
+whichValueBetween(1, 2, 3);
+whichValueBetween(3, 1, 2);
+whichValueBetween(2, 3, 1);
 
-whichmetersberBetween(1, 3, 2);
-whichmetersberBetween(2, 1, 3);
-whichmetersberBetween(3, 2, 1);
+whichValueBetween(1, 3, 2);
+whichValueBetween(2, 1, 3);
+whichValueBetween(3, 2, 1);
 
-whichmetersberBetween(1, 1, 3);
-whichmetersberBetween(3, 1, 1);
-whichmetersberBetween(1, 3, 1);
+whichValueBetween(1, 1, 3);
+whichValueBetween(3, 1, 1);
+whichValueBetween(1, 3, 1);
 
-whichmetersberBetween(1, 3, 3);
-whichmetersberBetween(3, 1, 3);
-whichmetersberBetween(3, 3, 1);
+whichValueBetween(1, 3, 3);
+whichValueBetween(3, 1, 3);
+whichValueBetween(3, 3, 1);
 
-whichmetersberBetween(1, 1, 1);
+whichValueBetween(1, 1, 1);
 
 /*
 6.  Задано номер дня тижня.
@@ -299,7 +299,7 @@ function metersToKilometers(m) {
 	let endingForMeter;
 	if (m === 1) {
 		endingForMeter = '';
-	} else if (m < 5) {
+	} else if (m < 5 || m % 1 !== 0) {
 		endingForMeter = 'а';
 	} else {
 		endingForMeter = 'ів';
@@ -309,7 +309,7 @@ function metersToKilometers(m) {
 	} else if (m === 1000) {
 		console.log(`${m} метр${endingForMeter} це буде ${km} кілометр`);
 	} else if (km % 1 == 0 && m < 5000) {
-		console.log(`${m} метрів це буде ${km} кілометри`);
+		console.log(`${m} метр${endingForMeter} це буде ${km} кілометри`);
 	} else if (km % 1 !== 0) {
 		console.log(`${m} метр${endingForMeter} це буде ${km} кілометра`);
 	} else {
@@ -320,6 +320,8 @@ function metersToKilometers(m) {
 }
 
 metersToKilometers(0);
+metersToKilometers(0.5);
+metersToKilometers(2.5);
 metersToKilometers(1);
 metersToKilometers(2);
 metersToKilometers(5);
